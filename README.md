@@ -1,4 +1,4 @@
-Timer App is aiming to be a simple and chill timer app.
+Timer App is simple and chill timer app.
 
 ## Features
 
