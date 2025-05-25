@@ -9,7 +9,7 @@ Timer App is aiming to be a simple and chill timer app.
 
 ## Developement
 
-This project was created to test Tauriv2 and Github Actions.
+This project was created with Next.JS and was used to test Tauriv2 and Github Actions.
 
 ## TODO
 
