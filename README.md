@@ -7,7 +7,7 @@ Timer App is simple and chill timer app.
 - Customize timer alarm sound
 - Chill vibes
 
-## Developement
+## Development
 
 This project was created with Next.JS and was used to test Tauriv2 and Github Actions.
 
