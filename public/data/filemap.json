@@ -1,0 +1,22 @@
+{
+    "images": [
+        {
+            "name": "Leaves",
+            "filePath": "img/bg_leaves.png"
+        },
+        {
+            "name": "Sample Image 2",
+            "filePath": "img/sample2.png"
+        }
+    ],
+    "audio": [
+        {
+            "name": "Rain Sound",
+            "filePath": "audio/rain.mp3"
+        },
+        {
+            "name": "Alarm Sound",
+            "filePath": "audio/alarm.mp3"
+        }
+    ]
+}

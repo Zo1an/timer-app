@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Progress } from "antd";
+import { deleteTimer } from "@/app/handleJSON";
 
 export default function CountdownTimer(props) {
    const [timer, setTimer] = useState(props.duration);
@@ -11,7 +12,7 @@ export default function CountdownTimer(props) {
    useEffect(() => {
       if (timer === 0) {
          if (!audioRef.current) {
-            audioRef.current = new Audio('../../alarm.mp3');
+            audioRef.current = new Audio('../../audio/alarm.mp3');
          }
          audioRef.current.currentTime = 0;
          audioRef.current.play();
@@ -31,9 +32,49 @@ export default function CountdownTimer(props) {
       }
    };
 
+   const [isEditing, setIsEditing] = useState(false);
+   const [editedName, setEditedName] = useState(props.name);
+
+   const handleNameClick = () => {
+      setIsEditing(true);
+   };
+
+   const handleNameChange = (e) => {
+      setEditedName(e.target.value);
+   };
+
+   const handleNameBlur = () => {
+      setIsEditing(false);
+      if (props.onNameChange) {
+         props.onNameChange(editedName, props.id);
+      }
+   };
+
+   const handleNameKeyDown = (e) => {
+      if (e.key === 'Enter') {
+         setIsEditing(false);
+         if (props.onNameChange) {
+            props.onNameChange(editedName, props.id);
+         }
+      }
+   };
+
    return (
       <div className={`p-4 rounded-lg shadow-lg text-center bg-gray-800/20 backdrop-blur-[6px] backdrop-saturate-[100%] border border-opacity-20 border-white ${props.styletype === 'round' && 'w-64 h-64'} ${props.styletype === 'progress' && 'w-80 h-48 flex flex-col'}`}>
-         <p className='font-sans text-lg mb-4'>{props.name}</p>
+         {isEditing ? (
+            <input
+               className="font-sans text-lg mb-4 bg-transparent border-b border-white outline-none text-white text-center"
+               value={editedName}
+               onChange={handleNameChange}
+               onBlur={handleNameBlur}
+               onKeyDown={handleNameKeyDown}
+               autoFocus
+            />
+         ) : (
+            <p className='font-sans text-lg mb-4 cursor-pointer' onClick={handleNameClick}>
+               {editedName}
+            </p>
+         )}
          {props.styletype === 'round' && (
             <><Progress
                className='mb-4'
@@ -66,6 +107,9 @@ export default function CountdownTimer(props) {
                Reset
             </button>
          </div>
+         <button className='absolute top-1 right-1 bg-[url(/img/x.svg)] bg-center bg-no-repeat text-white w-8 h-8 rounded'
+                  onClick={() => deleteTimer(props.id) } >
+         </button>
       </div>
    );
 }

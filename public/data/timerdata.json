@@ -1,0 +1,209 @@
+[
+  {
+    "id": 0,
+    "name": "Timer 1",
+    "duration": 15,
+    "color": "#4F8EF7",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 1,
+    "name": "Timer 2",
+    "duration": 30,
+    "color": "#34C759",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 2,
+    "name": "Timer 3",
+    "duration": 45,
+    "color": "#FF9500",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 3,
+    "name": "Timer 4",
+    "duration": 60,
+    "color": "#FF3B30",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 4,
+    "name": "Timer 5",
+    "duration": 90,
+    "color": "#AF52DE",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 5,
+    "name": "Timer 6",
+    "duration": 120,
+    "color": "#FFD60A",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 6,
+    "name": "Timer 7",
+    "duration": 150,
+    "color": "#32D74B",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 7,
+    "name": "Timer 8",
+    "duration": 180,
+    "color": "#64D2FF",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 8,
+    "name": "Timer 9",
+    "duration": 210,
+    "color": "#FF375F",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 9,
+    "name": "Timer 10",
+    "duration": 240,
+    "color": "#5E5CE6",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 10,
+    "name": "Timer 11",
+    "duration": 270,
+    "color": "#FF9F0A",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 11,
+    "name": "Timer 12",
+    "duration": 300,
+    "color": "#30D158",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 12,
+    "name": "Timer 13",
+    "duration": 330,
+    "color": "#BF5AF2",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 13,
+    "name": "Timer 14",
+    "duration": 360,
+    "color": "#FFD60A",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 14,
+    "name": "Timer 15",
+    "duration": 390,
+    "color": "#64D2FF",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 15,
+    "name": "Timer 16",
+    "duration": 420,
+    "color": "#FF375F",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 16,
+    "name": "Timer 17",
+    "duration": 450,
+    "color": "#5E5CE6",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 17,
+    "name": "Timer 18",
+    "duration": 480,
+    "color": "#FF9F0A",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 18,
+    "name": "Timer 19",
+    "duration": 510,
+    "color": "#30D158",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 19,
+    "name": "Timer 20",
+    "duration": 540,
+    "color": "#BF5AF2",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 20,
+    "name": "Timer 21",
+    "duration": 570,
+    "color": "#FFD60A",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 21,
+    "name": "Timer 22",
+    "duration": 600,
+    "color": "#32D74B",
+    "styletype": "progress",
+    "started": false,
+    "audio": "alarm"
+  },
+  {
+    "id": 22,
+    "name": "Timer 23",
+    "duration": 6300,
+    "color": "#4F8EF7",
+    "styletype": "round",
+    "started": false,
+    "audio": "alarm"
+  }
+]
