@@ -6,6 +6,14 @@
     "main"
   ],
   "permissions": [
-    "core:default"
+    "core:default",
+    "fs:allow-desktop-write",
+    "fs:allow-create",
+    "fs:allow-desktop-read-recursive",
+    "fs:allow-desktop-meta-recursive",
+    {
+      "identifier": "fs:allow-create",
+      "allow": [{ "path": "*" }]
+    }
   ]
 }

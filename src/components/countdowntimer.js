@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Progress } from "antd";
-import { deleteTimer } from "@/app/handleJSON";
+import { deleteTimer } from "@/app/handleJSON_tau";
 
 export default function CountdownTimer(props) {
    const [timer, setTimer] = useState(props.duration);
@@ -108,7 +108,7 @@ export default function CountdownTimer(props) {
             </button>
          </div>
          <button className='absolute top-1 right-1 bg-[url(/img/x.svg)] bg-center bg-no-repeat text-white w-8 h-8 rounded'
-                  onClick={() => deleteTimer(props.id) } >
+                  onClick={() => props.onDelete(props.id) } >
          </button>
       </div>
    );

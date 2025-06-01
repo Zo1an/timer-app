@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tauri": "tauri"
   },
   "dependencies": {
+    "@tauri-apps/plugin-fs": "^2.3.0",
     "antd": "^5.25.2",
     "next": "^15.3.2",
     "react": "^19.0.0",
