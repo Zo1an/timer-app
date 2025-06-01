@@ -198,10 +198,10 @@
     "audio": "alarm"
   },
   {
-    "id": 22,
-    "name": "Timer 23",
-    "duration": 6300,
-    "color": "#4F8EF7",
+    "id": 24,
+    "name": "New Timer",
+    "duration": 60,
+    "color": "hsl(276, 90%, 55%)",
     "styletype": "round",
     "started": false,
     "audio": "alarm"

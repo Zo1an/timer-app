@@ -4,7 +4,7 @@ Timer App is simple and chill timer app.
 
 - Add, remove and edit timers
 - 2 timer styles: Round and Progress
-- Customize timer alarm sound
+- Customizeable timer alarm sound
 - Chill vibes
 
 ## Development
@@ -13,7 +13,6 @@ This project was created with Next.JS and was used to test Tauriv2 and Github Ac
 
 ## TODO
 
-- [?] Rewrite handleJSON with Tauri
 - Add rain sound effect
 - Add settings page (rain sound, rain effect, background image)
 - On Change: Save timer name to local storage
