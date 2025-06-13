@@ -3,7 +3,7 @@
 import CountdownTimer from "@/components/countdowntimer";
 import ReactRain from 'react-rain-animation';
 import "react-rain-animation/lib/style.css";
-import { addTimer, getTimers, deleteTimer } from "@/app/handleJSON_tau";
+import { addTimer, getTimers, updateTimer, deleteTimer, getOptions } from "@/app/handleJSON_tau";
 import { useEffect, useState } from "react";
 
 // Simple skeleton component
@@ -21,6 +21,23 @@ function TimerSkeleton() {
 export default function Home() {
    const [timers, setTimers] = useState([]);
    const [loading, setLoading] = useState(false);
+   const [appOptions, setAppOptions] = useState({});
+
+   useEffect(() => {
+      let audio;
+      if (appOptions.enable_rain_sound) {
+         audio = new Audio('/audio/rain.mp3');
+         audio.loop = true;
+         audio.volume = appOptions.rain_sound_volume;
+         audio.play();
+      }
+      return () => {
+         if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+         }
+      };
+   }, [appOptions.enable_rain_sound]);
 
    useEffect(() => {
       async function fetchTimers() {
@@ -28,6 +45,14 @@ export default function Home() {
          setTimers(data);
       }
       fetchTimers();
+   }, []);
+
+   useEffect(() => {
+      async function fetchAppOptions() {
+         const data = await getOptions();
+         setAppOptions(data);
+      }
+      fetchAppOptions();
    }, []);
 
    // Helper to refresh timers
@@ -59,18 +84,22 @@ export default function Home() {
       deleteTimer(id).then(refreshTimers);
    }
 
+   function onSetDuration(id, new_value){
+      updateTimer(id, "duration", new_value).then(refreshTimers);
+   }
+
    return (
       <div className="grid items-center justify-items-center min-h-screen">
+         
          <button className='absolute top-2 border border-white-500 text-white px-3 py-2 rounded shadow-lg bg-gray-800/20 backdrop-blur-[6px] backdrop-saturate-[100%] border-opacity-20 border-white'
                   onClick={handleNewClick} >
             <div className="bg-[url(/img/x.svg)] rotate-45 bg-center bg-no-repeat w-3 h-3 inline-block mr-2"></div>
             New timer
          </button>
-         <ReactRain
-            numDrops="500"
-         />
+         {appOptions.enable_rain_effect && (
+            <ReactRain numDrops="500" />
+         )}
          <main className="absolute transition-all flex flex-wrap p-8 mt-32 gap-8 pb-24 items-center max-h-screen justify-center overflow-scroll">
-            {loading && <TimerSkeleton />}
             {timers.map((timer) => (
                <CountdownTimer
                   key={timer.id}
@@ -82,8 +111,10 @@ export default function Home() {
                   started={timer.started}
                   audio={timer.audio}
                   onDelete={onDeleteTimer}
+                  onSetDuration={onSetDuration}
                />
             ))}
+            {loading && <TimerSkeleton />}
             <button
                className="fixed top-2 text-4xl right-2 w-10 h-10 transition border border-white-500 text-white rounded bg-gray-800/20 backdrop-blur-[6px] backdrop-saturate-[100%] border-opacity-20 border-white bg-[url(/img/gear_filled.svg)] bg-auto bg-center bg-no-repeat"
                onClick={() => alert("This is a test button!")}

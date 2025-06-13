@@ -1,5 +1,6 @@
 {
     "enable_rain_sound": true,
+    "rain_sound_volume": 0.5,
     "enable_rain_effect": true,
     "background_image": "Leaves"
 }
